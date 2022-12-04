@@ -1,0 +1,72 @@
+comando openssl sha1
+Irá gerar um código de 40 digitos para o documento.
+Caso o documento seja alterado, esse código tbm será alterado quando gerado.
+Caso altere novamente para forma original do documento, ao gerar o código Irá 
+gerar o mesmo código que foi gerado primeiro.
+
+
+
+
+git init
+Irá iniciar um repositório dentro de uma pasta específica.
+
+Para commitar um arquivo.
+Com o git direcionado na pasta.
+Dar o comando "git add *".
+Depois o comando git commit -m "Aqui dentro vai a mensagem que vc coloca no git" . 
+Pronto, commit feito.
+
+
+
+
+Ideal é usar o mesmo e-mail e usuário do github no git.
+Caso tenha feito diferente, tem como apagar o e-mail e usuário e cadastrar novamente.
+Os comandos abaixo irão apagar o email e usuário.
+
+git config --global --unset user.email         (Apaga o email).
+
+git config --global --unset user.name           (Apaga o usuário).
+
+git config --list         (irá mostrar a lista de config do git). ex: usuário e email.
+
+Agora para cadastrar o e-mail e usuário novamente os comandos são:
+
+git config --global user.email "brunoperez16@hotmail.com"
+
+git config --global user.name "brunozeghir"
+
+
+
+
+Para enviarmos os nossos arquivos para o github.
+Após criarmos o repositório no github, copiamos o link fornecido.
+Vamos ao git, digitaremos o seguinte comando.
+git remote add origin https://github....
+origin é um nome que a gente dá para o link que iremos enviar nossos arquivos.
+
+Após, colocaremos o seguinte código no git
+
+git push origin master
+
+confirma a ação caso apareça algo para confirmar. Pronto.
+
+
+
+Caso ao enviar um arquivo que já tenha no github mas vc editou, e dê erro por 
+existir modificações diferentes na mesma linha, vc deverá trazer o arquivo do 
+github para sua máquina para fazer a alteração do conflito e depois enviar novamente.
+
+Para trazer o arquivo em conflito, usaremos o comando seguinte:
+
+git pull origin master
+
+Assim terá baixado o arquivo a ser modificado.
+
+
+
+
+Para clonarmos um repositório do github para nossa máquina, teremos que seguir os seguintes passos.
+Acessar o repositório no github
+Ir no botão code e copiar o código URL
+Ir no git bash, direcionar a pasta que ficará o repositório.
+Dar o comando git clone url copiada.

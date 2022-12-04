@@ -1,0 +1,100 @@
+1 AULA
+Comandos utilizados no cmd
+
+cd /
+irá retroceder até a pasta raiz, a primeira pasta.
+
+cd .. 
+irá retroceder em uma página.
+
+cls
+Irá limpar o terminal, tirando as informações da tela.
+
+dir 
+Lista tudo o que tem dentro da pasta em que está.
+
+cd "nome de uma pasta"
+Ira nos levar para dentro desta pasta
+
+Tecla tab
+Irá auto preencher o nome da pasta que começamos a escrever
+Ex: "cd W", ao apertar tab, o cmd irá identificar que há apenas uma pasta
+que começa com W por exemplo e irá preencher o restante do nome.
+Assim ficaria cd windows.
+
+mkdir
+comando utilizado para criarmos uma pasta
+
+echo
+Comando que serve para digitar o que escrevemos depois dele no
+terminal ou em outro lugar que direcionarmos.
+EX: echo hello > hello.txt 
+Neste exemplo, criaremos um arquivo hello.txt e dentro dele teremos
+escrito a palavra hello que foi colocada depois do echo.
+O sinal de > serve para direcionar onde iremos escrever o que foi dado
+para o comando echo, se não tiver uma pasta existente, ele irá criar uma.
+
+del 
+Comando usado para deletar o que existe dentro da pasta que indicarmos.
+Ex: del workspace
+Irá deletar tudo que estiver dentro da pasta workspace.
+
+rmdir "nome da pasta" /S /Q 
+Usado para apagar uma pasta ou diretório por completo.
+
+
+
+
+
+AULA PARA GERAR A CHAVE SSH
+VAMOS COMEÇAR, PRIMEIRO PASSO APÓS ABRIR O GIT BASH
+Colocar o comando 
+
+ssh-keygen -t ed25519 -C brunoperez16@hotmail.com
+Atenção para o "-C" q é maiusculo.
+
+Depois de colocarmos uma senha, sera gerada a chave privada e chave publica.
+
+Navegaremos até a chave publica, ela que será adicionada ao github.
+
+/c/Users/Bruno/.ssh
+Após daremos o comando ls
+ele irá listar o que temos dentro da pasta.
+irá aparecer o nome dos arquivos das chaves.
+Após, daremos o comando "cat id_ed25519.pub", assim será mostrado a chave
+publica, que será colocada no github.
+Agora é copiar a chave e colar na aba do github sobre chave ssh.
+
+Agora vamos iniciar o ssh agent.
+
+No git bash, estando ainda dentro da pasta .ssh iremos digitar o comando
+
+eval $(ssh-agente -s)
+Pronto, estaremos startando um processo.
+
+Agora iremos entregar a nossa chave privada para esse agent.
+
+usaremos o comando "ssh-add id_ed25519" e depois digitaremos a senha que adicionamos.
+Pronto, agora está configurado.
+
+
+Agora vamos clonar um repositório do github.
+Ao entrarmos em um portifólio, clicaremos no botão code e selecionaremos a opção ssh.
+Alí copiaremos o link. 
+No git bash, direcionaremos para uma nova pasta. Criei uma chamada workspace.
+no git bash, colocaremos o comando
+"git clone" e o link copiado no github.
+depois dê "yes" e pronto, repositório clonado.
+
+
+
+Para clonar via HTTPS, criaremos o token pessoal.
+Iremos no github, settings > Developer settings > Personal access tokens > tokens (classic)
+
+Nas opções selecionaremos o "repo" que é a primeira opção e daremos um nome ao token.
+Pronto, agora é só copiar o token gerado e guardar.
+Agora para clonar o repositório, iremos no github a ser clonado, clicaremos em "code" e escolheremos a opção HTTPS.
+Copiaremos o link, e iremos para o terminal git bash.
+Usaremos o comando "git clone" e o link copiado.
+ao abrir a janela do navegador, colocaremos o nosso token pessoal.
+Pronto, agora o repositório foi clonado.

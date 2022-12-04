@@ -1,0 +1,36 @@
+TAG TRACK
+Fica dentro da tag video. Nada mais é do que legenda.
+
+Arquivo com extensão .vtt
+É o arquivo em que colocamos a legenda e o momento que irá aparecer no vídeo.
+Tem um formato para se escrever esse arquivo, pesquisar quando precisar.
+
+<video controls>
+    <source src="video.mp4" />
+    <source src="video.webm" />
+    <track src="legenda.vtt" kind="captions" srclang="en" />
+    <track default src="legenda-pt-br.vtt" kind="captions" srclang="pt-br" />
+    Seu navegador não tem suporte a vídeos.
+</video>
+
+Esse foi um exemplo de como a tag track fica dentro da tag video.
+
+Atributo kind e seus valores
+
+Valor descriptions:
+Ele irá descrever a imagem que está passando no vídeo, quando não tem ninguém falando nada, não tem legenda.
+
+captions e subtitles são praticamente a mesma coisa.
+subtitles lê os subtitulos, captions ele lê a fala da pessoa.
+
+chapters
+Coloca sobre o que está falando em certos pedaços do vídeo.
+
+metadata:
+São dados adicionais que podemos colocar.
+
+Atributo srclang:
+Vai aparecer nos botões para selecionar a linguagem.
+
+Atributo default:
+Determina como aquela linha como padrão, no nosso exemplo, iria carregar a legenda em pt-br como padrão.
